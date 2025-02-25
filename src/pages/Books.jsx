@@ -12,7 +12,8 @@ const Books = () => {
     queryKey: ['booksData'],
     queryFn: async () => {
       console.log('Fetching Data')
-      const response = await fetch('http://localhost:3000/books')
+      const response = await fetch(`${import.meta.env.VITE_BOOKS_API_URL}`)
+      // const response = await fetch('http://localhost:3000/books')
       return response.json()
     },
     staleTime: Infinity
