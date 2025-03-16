@@ -12,6 +12,7 @@ import BookEdit from '../components/books/BookEdit'
 import Movies from '../pages/Movies';
 import MovieCreate from '../components/movies/MovieCreate'
 import MovieEdit from '../components/movies/MovieEdit'
+import MovieDetails from '../components/movies/MovieDetails'
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
           {
             path: ':id/edit',
             element: <MovieEdit />
+          },
+          {
+            path: ':id/details',
+            element: <MovieDetails />
           }
         ]
       }
