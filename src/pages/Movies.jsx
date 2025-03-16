@@ -21,6 +21,7 @@ const Movies = () => {
   })
 
   if (error) return <div>{`An error has occured: ${error.message}`}</div>
+  else console.log(movies)
 
   return (
     <div>
