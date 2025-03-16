@@ -14,8 +14,9 @@ function MovieEdit() {
             const response = await fetch(`${import.meta.env.VITE_MOVIES_API_URL}/${id}`)
             return response.json()
         }
-
     })
+
+    console.log(`Testing: ${data}`)
 
     const editMovieMutation = useMutation({
       mutationFn: async (data) => {
