@@ -8,6 +8,9 @@ function MovieEdit() {
     const navigate = useNavigate()
     const queryClient = useQueryClient()
 
+    console.log("ID:")
+    console.log(id)
+
     const { data } = useQuery({
         queryKey: ['movies', id],
         queryFn: async () => {
@@ -15,9 +18,6 @@ function MovieEdit() {
             return response.json()
         }
     })
-
-    console.log(`First:`)
-    console.log(data)
 
     const editMovieMutation = useMutation({
       mutationFn: async (data) => {
@@ -53,7 +53,7 @@ function MovieEdit() {
 
     return (
         <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
-        <h2 className="text-2xl font-bold mb-4 text-gray-800">Edit Movie - Id: { data?.data._id }</h2>
+        <h2 className="text-2xl font-bold mb-4 text-gray-800">Edit Movie - Id: { data.data?._id }</h2>
         <MovieForm onDataCollected={processData} initialData={data}/>
       </div>
       )
