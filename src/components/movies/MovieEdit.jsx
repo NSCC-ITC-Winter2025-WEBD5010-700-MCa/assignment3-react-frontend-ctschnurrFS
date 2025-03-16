@@ -16,7 +16,8 @@ function MovieEdit() {
         }
     })
 
-    console.log(`Testing: ${data}`)
+    console.log(`First:`)
+    console.log(data)
 
     const editMovieMutation = useMutation({
       mutationFn: async (data) => {
@@ -35,6 +36,7 @@ function MovieEdit() {
     })
 
     useEffect(() => {
+        console.log(`useEffect:`)
         console.log(data)
         // pre-populate the form
         // if(data){
