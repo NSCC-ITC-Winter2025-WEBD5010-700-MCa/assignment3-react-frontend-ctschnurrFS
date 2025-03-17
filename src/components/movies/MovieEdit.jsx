@@ -10,7 +10,6 @@ function MovieEdit() {
 
     console.log("ID:")
     console.log(id)
-    console.log(typeof id)
 
     const { data } = useQuery({
         queryKey: ['movies', id],
