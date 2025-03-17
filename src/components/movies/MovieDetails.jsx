@@ -17,41 +17,14 @@ function MovieDetails() {
 
     })
 
-    const editMovieMutation = useMutation({
-      mutationFn: async (data) => {
-        const response = await fetch(`${import.meta.env.VITE_MOVIES_API_URL}/${id}`, {
-          method: `PUT`,
-          headers: { 'Content-Type': 'application/json'},
-          body: JSON.stringify(data)
-        })
-
-        return response.json()
-      },
-      onSuccess: () => {
-          queryClient.invalidateQueries(['moviesData'])
-          navigate('/admin/movies')
-      }
-    })
-
     useEffect(() => {
         console.log(data)
-        // pre-populate the form
-        // if(data){
-        //     setValue('title', data.title)
-        //     setValue('author', data.author)
-        //     setValue('published_year', data.published_year)
-        //     setValue('genre', data.genre)
-        // }
     }, [data])
-
-    const processData = (data) => {
-      editMovieMutation.mutate(data);
-    }
 
     return (
         <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">Movie Details - Id: { data?.data._id }</h2>
-        <p>{ data.data }</p>
+        <p>{ data?.data }</p>
       </div>
       )
 }
