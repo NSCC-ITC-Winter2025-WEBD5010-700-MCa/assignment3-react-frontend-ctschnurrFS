@@ -22,9 +22,9 @@ function MovieDetails() {
     }, [data])
 
     return (
-        <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
+      <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-6">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">Movie Details - Id: { data?.data._id }</h2>
-        <p>{ JSON.stringify(data?.data) }</p>
+        <pre>{JSON.stringify(data?.data, null, 2)}</pre>
       </div>
       )
 }
